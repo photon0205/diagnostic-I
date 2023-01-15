@@ -7,25 +7,17 @@
   justify-content: space-between;
   cursor: pointer;
   transition: transform 200ms ease-in;
-  background-color: #261010;
-  width: 342px;
-  height: 354px;
-  margin: auto;
+  background-color: #F2F5FB;
 }
-  .card__image {
-    height: 12rem;
-    width: 100%;
-    object-fit: cover;
-  }
 
   .card__title {
     padding: 1rem;
-    color: #87943A;
+    color: #000000;
   }
 
   .card__description {
     padding: 0 1rem;
-    color: #87943A;
+    color: #000000;
   }
 
   .card__btn {
@@ -34,9 +26,9 @@
     font-weight: bold;
     font-size: 1rem;
     margin: 1rem;
-    border: 2px solid #8E6E6E;
+    border: 2px solid #000000;
     background: transparent;
-    color: #87943A;
+    color: #000000;
     border-radius: 0.2rem;
     transition: background 200ms ease-in, color 200ms ease-in;
   }

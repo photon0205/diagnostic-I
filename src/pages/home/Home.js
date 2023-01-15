@@ -1,24 +1,34 @@
-import Card from '../../components/card/Card'
-import './Home.css'
+import Card from "../../components/card/Card";
+import "./Home.css";
 
-export default function Home(){
-    return (
-        <div className="wrapper">
-          <Card
-            img=""
-            title="Drug Prediction"
-            description="X-Ray description"
-            buttonTitle="Predict"
-            
-          />
-    
-          <Card
-            img=""
-            title="X-Ray Status"
-            description="Mental Health description"
-            buttonTitle="Select"
-            path = "/upload"
-          />
-        </div>
-      );
+export default function Home() {
+  return (
+    <div className="wrapper1">
+      <Card
+        title="Laboratory Results"
+        description="Tell us about your symptoms 
+                    you are facing and we will give
+                    you the predicted medicines 
+                    you can take"
+        buttonTitle="Predict"
+        path="/lab"
+      />
+
+      <Card
+        title="X-Ray Status"
+        description="Upload your X-Ray and find out 
+                    if you a particular disease or 
+                    you are healthy"
+        buttonTitle="Select"
+        path="/upload"
+      />
+
+      <Card
+        title="Mental Health"
+        description="Mental Health description"
+        buttonTitle="Predict"
+        path="/lab"
+      />
+    </div>
+  );
 }
