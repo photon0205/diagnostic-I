@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper0_body {
+  font-family: Oxygen, sans-serif;
+  margin: 0rem;
+  padding: 0px;
+}
+
+.wrapper0 {
+    display: grid;
+  gap: 2rem;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 20px 200px #B4C5DE;
+  border-radius: 20px;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+  background-color: #f2f5fb;
+  width: 868px;
+  height: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.title {
+  padding: 1rem;
+  color: #87943a;
+}
+
+.wrapper_body {
+  padding: 0 1rem;
+  color: #87943a;
+}
+
+.btn {
+  padding: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid #8e6e6e;
+  background: transparent;
+  background-color: #b4c5de;
+  border-radius: 0.2rem;
+  transition: background 200ms ease-in, color 200ms ease-in;
+}
+
+.wrapper :hover {
+  transform: scale(1.02);
+}
+
+.wrapper :hover .card__btn {
+  background: #d50000;
+  color: white;
+}
+.val{
+    color: #d50000
+}

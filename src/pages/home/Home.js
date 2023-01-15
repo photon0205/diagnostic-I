@@ -27,7 +27,7 @@ export default function Home() {
         title="Mental Health"
         description="Mental Health description"
         buttonTitle="Predict"
-        path="/lab"
+        path="/mental"
       />
     </div>
   );

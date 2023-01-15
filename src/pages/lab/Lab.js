@@ -4,19 +4,22 @@ import React from "react";
 import { useState } from "react";
 
 export default function Lab() {
-  const [selectedFile, setSelectedFile] = useState();
   const [value, setValue] = useState();
-  const onFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
+  const [haematocrit, setHaematocrit] = useState();
+  const [haemoglobin, setHaemoglobin] = useState();
+  const [erythrocyte, setErythrocyte] = useState();
+  const [leucocyte, setLeucocyte] = useState();
+  const [thrombocyte, setThrombocyte] =useState();
+  const [age, setAge] = useState();
+  const [gender, setGender] = useState();
 
-  const onFileUpload = async () => {
-    setValue('Out Patient')
-    let formData = new FormData();
-    formData.append("file", selectedFile);
+  const predict = async () => {
+    let array = [[haematocrit, haemoglobin, erythrocyte, leucocyte, thrombocyte, age, gender]]
+    let formData = ("array", array);
+    console.log(formData)
     let res = await axios({
       method: "post",
-      url: "http://localhost:8000/predict",
+      url: "http://localhost:8000/predict/patient_treatment_classification",
       data: formData,
     });
     if (res.status === 200) {
@@ -24,22 +27,18 @@ export default function Lab() {
       console.log(res.data);
     }
   };
-
-  const handleChange=()=>{
-
-  }
   return (
     <div>
       <div className="wrapper">
         <div className="wrapper-body">
-          Haematocrit: <input type="textbox" value="44" name="gender" onChange={handleChange}/><br></br><br></br>
-          Haemoglobin: <input type="textbox" value="12" name="gender" onChange={handleChange}/><br></br><br></br>
-          Erythrocyte: <input type="textbox" value="4" name="gender" onChange={handleChange}/><br></br><br></br>
-          Leucocyte: <input type="textbox" value="6" name="gender" onChange={handleChange}/><br></br><br></br>
-          Thrombocyte: <input type="textbox" value="340" name="gender" onChange={handleChange}/><br></br><br></br>
-          Age: <input type="textbox" value="19" name="gender" onChange={handleChange}/><br></br><br></br>
-          Gender: <input type="textbox" value="Female" name="gender" onChange={handleChange}/><br></br><br></br>
-          <button className="btn" onClick={onFileUpload}>
+          Haematocrit: <input type="textbox"  onChange={(e) => {setHaematocrit(e.target.value)}}/><br></br><br></br>
+          Haemoglobin: <input type="textbox"  onChange={(e) => {setHaemoglobin(e.target.value)}}/><br></br><br></br>
+          Erythrocyte: <input type="textbox" onChange={(e) => {setErythrocyte(e.target.value)}}/><br></br><br></br>
+          Leucocyte: <input type="textbox" onChange={(e) => {setLeucocyte(e.target.value)}}/><br></br><br></br>
+          Thrombocyte: <input type="textbox" onChange={(e) => {setThrombocyte(e.target.value)}}/><br></br><br></br>
+          Age: <input type="textbox"  onChange={(e) => {setAge(e.target.value)}}/><br></br><br></br>
+          Gender: <input type="textbox"  onChange={(e) => {setGender(e.target.value)}}/><br></br><br></br>
+          <button className="btn" onClick={predict}>
             Predict!
           </button>
           <h2>Prediction:<br></br> <span className="val">{value}</span></h2>

@@ -1,0 +1,48 @@
+.RadioButton {
+  margin: 16px 0;
+  display: none;
+}
+
+.RadioButton :checked + label:before {
+  border-color: rgb(51, 122, 183);
+  animation: ripple 0.2s linear forwards;
+}
+
+:checked + label:after {
+  transform: scale(1);
+}
+
+.RadioButton label {
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  padding: 0 (20px + 10px);
+  margin-bottom: 0;
+  cursor: pointer;
+  vertical-align: bottom;
+}
+.RadioButton :before,
+:after {
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  transition-property: transform, border-color;
+}
+
+.RadioButton:before {
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.54);
+}
+
+.RadioButton:after {
+  top: 20px / 2 - 10px / 2;
+  left: 20px/ 2 - 10px / 2;
+  width: 10px;
+  height: 10px;
+  transform: scale(0);
+  background: rgb(51, 122, 183);
+}
