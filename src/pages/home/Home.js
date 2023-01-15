@@ -9,6 +9,7 @@ export default function Home(){
             title="Drug Prediction"
             description="X-Ray description"
             buttonTitle="Predict"
+            
           />
     
           <Card
@@ -16,6 +17,7 @@ export default function Home(){
             title="X-Ray Status"
             description="Mental Health description"
             buttonTitle="Select"
+            path = "/upload"
           />
         </div>
       );

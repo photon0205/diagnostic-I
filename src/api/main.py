@@ -20,7 +20,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODEL = tf.keras.models.load_model("../../models/knee.h5")
+MODEL = tf.keras.models.load_model("../../mode")
 
 CLASS_NAMES = ["A", "B", "C", "D", "E"]
 
