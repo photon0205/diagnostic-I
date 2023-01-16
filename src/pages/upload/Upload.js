@@ -13,7 +13,7 @@ export default function Upload() {
   };
 
   const onFileUpload = async () => {
-    setValue("Your Osteoarthritis condition is moderate")
+    
     let formData = new FormData();
     formData.append("file", selectedFile);
     let res = await axios({

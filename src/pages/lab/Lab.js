@@ -12,7 +12,7 @@ export default function Lab() {
   const [thrombocyte, setThrombocyte] =useState();
   const [age, setAge] = useState();
   const [gender, setGender] = useState();
-
+  console.log(age);
   const predict = async () => {
     let array = [[haematocrit, haemoglobin, erythrocyte, leucocyte, thrombocyte, age, gender]]
     let formData = ("array", array);
